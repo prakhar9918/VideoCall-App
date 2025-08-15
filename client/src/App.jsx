@@ -1,7 +1,7 @@
 import './App.css'
 import { Route, Routes} from 'react-router-dom';
 import LobbyScreen from './screens/lobbyScreen';
-import Room from './screens/Room';
+import RoomPage from './screens/Room';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<LobbyScreen/>} />
-      <Route path="/room/:roomId" element={<Room/>} />
+      <Route path="/room/:roomId" element={<RoomPage/>} />
     </Routes>
     </>
   )
