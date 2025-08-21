@@ -9,7 +9,7 @@ const useSocket = () => {
 };
 
 const SocketProvider = ({ children}) => {
-   const socket = useMemo(() => io('http://localhost:3000'), []); 
+   const socket = useMemo(() => io('https://videocall-app-575a.onrender.com'), []); 
   return (
     <SocketContext.Provider value={socket}>
       {children}
@@ -18,4 +18,5 @@ const SocketProvider = ({ children}) => {
 }
 
 export { SocketProvider, useSocket };
+
 export default SocketContext;
