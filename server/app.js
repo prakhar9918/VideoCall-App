@@ -14,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server,{
     cors:{
-        origin: "http://localhost:5173",
+        origin: "https://video-call-app-flame-two.vercel.app/",
         methods: ["GET", "POST"],
         credentials: true, // Allow credentials to be sent
     }
@@ -22,7 +22,7 @@ const io = new Server(server,{
 
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://video-call-app-flame-two.vercel.app/",
   credentials: true
 }));
 app.use(express.json());
@@ -66,4 +66,5 @@ io.on('connection', (socket) => {
 
 server.listen(process.env.PORT, () => {
   console.log('Server is running on port 3000');
+
 });
