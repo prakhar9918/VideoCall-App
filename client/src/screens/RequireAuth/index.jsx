@@ -6,7 +6,7 @@ const RequireAuth = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/users/verify-token', {
+    axios.get('https://videocall-app-575a.onrender.com/api/users/verify-token', {
       withCredentials: true, // ✅ sends cookies
     })
     .then(() => setIsAuthenticated(true))
@@ -21,5 +21,6 @@ const RequireAuth = ({ children }) => {
 
   return children;
 };
+
 
 export default RequireAuth;
