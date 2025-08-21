@@ -18,7 +18,7 @@ const SignUp = () => {
             password
         };  
          
-        fetch('http://localhost:3000/api/users/signup', {
+        fetch('https://videocall-app-575a.onrender.com/api/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,5 +59,6 @@ const SignUp = () => {
     </div>
   );
 }
+
 
 export default SignUp;
