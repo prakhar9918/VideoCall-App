@@ -37,7 +37,7 @@ const signupController = async (req, res) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       sameSite: 'none', // Use 'Strict' or 'Lax' based on your needs
-      secure: false, // Set to true in production 
+      secure: true, // Set to true in production 
     });
     res.status(201).json({ 
       message: 'User created successfully',  
@@ -62,7 +62,7 @@ const loginController = async (req, res) => {
     const accessToken = await AccessTokenProvider(user);
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
-      secure:false,
+      secure:true,
       sameSite: 'none', 
     });
     res.status(200).json({ message: 'Login successful' });
@@ -73,4 +73,5 @@ const loginController = async (req, res) => {
 };
 
 module.exports = {signupController, loginController};
+
 
