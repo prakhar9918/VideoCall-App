@@ -36,7 +36,7 @@ const signupController = async (req, res) => {
 
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
-      sameSite: 'Strict', // Use 'Strict' or 'Lax' based on your needs
+      sameSite: 'none', // Use 'Strict' or 'Lax' based on your needs
       secure: false, // Set to true in production 
     });
     res.status(201).json({ 
@@ -63,7 +63,7 @@ const loginController = async (req, res) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure:false,
-      sameSite: 'Strict', 
+      sameSite: 'none', 
     });
     res.status(200).json({ message: 'Login successful' });
   } catch (error) {
@@ -73,3 +73,4 @@ const loginController = async (req, res) => {
 };
 
 module.exports = {signupController, loginController};
+
